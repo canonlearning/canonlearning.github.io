@@ -6,7 +6,9 @@ build step, and GitHub Pages serves the files as they are.
 
 - `index.html` is the home page.
 - `about/index.html` is the about page and its questions.
-- `style.css` styles both.
+- `demo/index.html` shows one visual from a course alone, for the frame on the
+  home page.
+- `style.css` styles the pages.
 - `CNAME` sets the address, `canonlearning.ai`.
 
 Each course is its own repository and publishes itself. GitHub Pages serves
