@@ -1,19 +1,22 @@
 /* The landing site: a home page and an about page. Plain HTML and one
-   stylesheet, with no build step. The font, Figtree, is loaded from Google Fonts. */
+   stylesheet, with no build step. The font, Figtree, is loaded from Google Fonts.
+   The colors are those of a lesson page, so the site and a course read
+   as one. */
 :root {
-  --ink: #1d2433;
-  --soft: #5b6475;
-  --blue: #2f66ad;
+  --ink: #1c1b19;
+  --soft: #6b675f;
+  --blue: #1f4e8c;
   --red: #c0392b;
-  --tint: #f6f7fb;
-  --line: #dfe4ee;
-  --deep: #1c2f52;
+  --tint: #f4f1ea;
+  --page: #fdfcf9;
+  --line: #d9d5cc;
+  --deep: #23221f;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--tint);
+  background: var(--page);
   color: var(--ink);
   font: 16px/1.5 Figtree, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 }
@@ -21,19 +24,19 @@ a { color: var(--blue); }
 .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
 /* Top bar */
-.top { background: #fff; }
+.top { border-bottom: 1px solid var(--line); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .brand { font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); text-decoration: none; }
 .top nav a { margin-left: 28px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px; }
 .top nav a:hover, .top nav a.here { color: var(--blue); }
 
 /* Hero, with small drawings set at angles around the words */
-.hero { position: relative; overflow: hidden; padding: 110px 24px 120px; text-align: center; }
+.hero { position: relative; overflow: hidden; padding: 110px 24px 130px; text-align: center; }
 .hero h1 { position: relative; margin: 0 auto; max-width: 15em; text-wrap: balance; font-size: 46px; line-height: 1.1; letter-spacing: -.01em; }
 .hero p { position: relative; margin: 26px auto 30px; max-width: 26em; font-size: 19px; }
 .button { position: relative; display: inline-block; padding: 11px 26px; border-radius: 8px; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; }
 .button:hover { background: var(--deep); }
-.tile { position: absolute; width: 150px; height: 150px; border-radius: 26px; background: #fff; box-shadow: 0 2px 10px rgb(29 36 51 / .08); }
+.tile { position: absolute; width: 150px; height: 150px; border-radius: 26px; border: 1px solid var(--line); background: var(--page); box-shadow: 0 2px 10px rgb(28 27 25 / .10); }
 .tile svg { width: 100%; height: 100%; }
 .t1 { left: 4%; top: 30px; transform: rotate(-14deg); }
 .t2 { left: 15%; top: 250px; transform: rotate(9deg); }
@@ -43,48 +46,54 @@ a { color: var(--blue); }
 .t6 { right: -30px; top: 320px; transform: rotate(7deg); }
 @media (max-width: 900px) { .tile { display: none; } .hero { padding: 60px 24px; } .hero h1 { font-size: 34px; } }
 
-/* White rounded panels */
-.panel { background: #fff; border-radius: 22px; padding: 44px; margin: 0 0 28px; }
+/* Sections. The page is one paper color, the same as a lesson, and
+   space alone divides its sections. */
+.panel { padding: 56px 0; }
+.panel:last-child { padding-bottom: 110px; }
 .panel h2 { margin: 0 0 10px; font-size: 26px; }
 .panel p { margin: 0 0 14px; }
 .more { font-weight: 700; text-decoration: none; }
 .more::before { content: "\2192\00a0"; }
 
-.example { padding: 14px 14px 18px; }
-.example iframe { display: block; width: 100%; height: 640px; border: 0; border-radius: 12px; }
-.example .under { display: flex; justify-content: space-between; gap: 16px; padding: 14px 10px 0; font-size: 15px; color: var(--soft); }
+/* The live visual stays in the middle of the page, and its note sits in
+   the space to its right. */
+.example { display: grid; grid-template-columns: 1fr minmax(0, 780px) 1fr; align-items: center; padding: 0 0 40px; }
+.example iframe { grid-column: 2; display: block; width: 100%; height: 640px; border: 0; border-radius: 12px; }
+.example .under { grid-column: 3; padding-left: 36px; line-height: 1.5; }
+.example .under span { display: block; margin-bottom: 14px; }
+@media (max-width: 1100px) {
+  .example { grid-template-columns: 1fr; }
+  .example iframe, .example .under { grid-column: 1; }
+  .example .under { padding: 16px 0 0; }
+}
 
+/* For students, for teachers: a heading, a drawing, and a sentence. */
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 64px; padding: 56px 0; }
+.for { padding: 0; }
+.for h2 { margin: 0 0 16px; font-size: 30px; line-height: 36px; }
+.for .art { display: block; margin: 8px 0 28px; }
+.for .art svg { display: block; width: 100%; }
+.for p { margin: 0; line-height: 24px; }
+
+/* The project's stance, centered. */
+.quote { padding: 72px 0; text-align: center; }
+.quote p { margin: 0 auto 24px; font-size: 28px; font-weight: 700; line-height: 1.3; text-wrap: balance; }
+
+/* Words beside a sample of a course's Markdown. */
 .claim { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
 .claim h2 { font-size: 30px; font-weight: 400; line-height: 1.25; }
 .claim pre { margin: 0; padding: 22px; border-radius: 12px; background: var(--tint); font: 14px/1.6 ui-monospace, Menlo, monospace; overflow: auto; }
+@media (max-width: 800px) { .grid2, .claim { grid-template-columns: 1fr; gap: 40px; } }
 
-.grid3, .grid2 { display: grid; gap: 48px; margin: 48px 0; }
-.grid3 { grid-template-columns: repeat(3, 1fr); }
-.grid2 { grid-template-columns: repeat(2, 1fr); }
-.grid3 .panel, .grid2 .panel { margin: 0; }
-.card { display: flex; flex-direction: column; padding: 48px; }
-.card h2 { margin: 16px 0; font-size: 30px; line-height: 36px; }
-.card p { margin: 0 0 16px; line-height: 24px; }
-.card p a { color: var(--ink); }
-.card .more { margin-top: auto; padding-top: 0; font-weight: 700; }
-.icon { width: 60px; height: 60px; border-radius: 14px; background: var(--blue); }
-.icon svg { width: 100%; height: 100%; }
-.for h2 { margin-top: 0; }
-.for .art { display: block; margin: 8px 0 28px; }
-.for .art svg { display: block; width: 100%; }
-.for p { margin: 0; }
-@media (max-width: 800px) { .grid3, .grid2, .claim { grid-template-columns: 1fr; } .grid3, .grid2 { gap: 28px; margin: 28px 0; } .panel, .card { padding: 28px; } }
-
-.courses { list-style: none; margin: 18px 0 0; padding: 0; }
-.courses li { padding: 16px 0; border-top: 1px solid var(--line); }
+/* The course list. A rule appears only between two courses. */
+.courses { list-style: none; margin: 8px 0 0; padding: 0; }
+.courses li { padding: 14px 0; }
+.courses li + li { border-top: 1px solid var(--line); }
 .courses a { font-size: 20px; font-weight: 600; text-decoration: none; }
 .courses span { color: var(--soft); }
 
-.quote { text-align: center; padding: 56px 44px; }
-.quote p { margin: 0 auto 24px; font-size: 28px; font-weight: 700; line-height: 1.3; color: var(--ink); text-wrap: balance; }
-
 /* Footer */
-.foot { margin-top: 60px; padding: 60px 0 70px; background: var(--deep); color: #fff; }
+.foot { padding: 60px 0 70px; background: var(--deep); color: #fff; }
 .foot .wrap { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; }
 .foot h3 { margin: 0 0 14px; font-size: 14px; }
 .foot a { display: block; margin-bottom: 10px; color: #fff; font-size: 15px; text-decoration: none; opacity: .85; }
@@ -96,20 +105,21 @@ a { color: var(--blue); }
    narrow column, with the list of questions at the right. The list comes
    first in the page, so on a narrow screen it sits above the answers. */
 .about { display: flex; flex-direction: row-reverse; justify-content: space-between; margin-top: 160px; margin-bottom: 160px; }
-.answers { max-width: 65ch; line-height: 28px; color: #374151; }
-.answers h1 { margin: 0 0 32px; font-size: 36px; font-weight: 800; line-height: 40px; color: #111827; }
+.answers { max-width: 65ch; line-height: 28px; color: #4a463f; }
+.answers h1 { margin: 0 0 32px; font-size: 36px; font-weight: 800; line-height: 40px; color: var(--ink); }
 .answers h1:not(:first-child) { margin-top: 48px; }
-.answers h2 { margin: 48px 0 24px; font-size: 24px; font-weight: 700; line-height: 32px; color: #111827; scroll-margin-top: 24px; }
+.answers h2 { margin: 48px 0 24px; font-size: 24px; font-weight: 700; line-height: 32px; color: var(--ink); scroll-margin-top: 24px; }
 .answers h1 + h2 { margin-top: 0; }
 .answers p, .answers ul { margin: 20px 0; }
 .answers ul { padding-left: 26px; }
 .answers li { margin: 8px 0; padding-left: 6px; }
-.answers li::marker { color: #d1d5db; }
-.answers b { font-weight: 600; color: #111827; }
-.answers a { color: #111827; font-weight: 500; text-decoration: underline; }
+.answers li::marker { color: #bdb7aa; }
+.answers b { font-weight: 600; color: var(--ink); }
+.answers a { color: var(--ink); font-weight: 500; text-decoration: underline; }
 .contents { width: 344px; flex: none; margin-bottom: 80px; font-size: 14px; line-height: 24px; }
 .contents b { display: block; font-size: 18px; line-height: 28px; }
-.contents a { display: block; color: #000; text-decoration: none; }
+.contents a { display: block; color: var(--ink); text-decoration: none; }
 .contents a.question { margin-left: 8px; }
 .contents a:hover { text-decoration: underline; }
 @media (max-width: 768px) { .about { flex-direction: column; margin-top: 60px; } .contents { width: auto; } }
+
