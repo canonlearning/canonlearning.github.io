@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About + FAQ | Canon Learning</title>
 <meta name="description" content="Open courses with interactive visuals, slides for the classroom, and problems with worked solutions. Free to read, free to teach from, free to change.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -13,8 +16,63 @@
   <nav><a href="../probability-1/">Probability 1</a><a href="../about/" class="here">About + FAQ</a><a href="https://github.com/canonlearning">GitHub</a></nav>
 </div></header>
 <main class="wrap about">
-  <nav class="panel contents"><b>On this page</b><a href="#what">What is Canon Learning?</a><a href="#free">Is it free? Is it open source?</a><a href="#students">Can I use a course on my own?</a><a href="#teach">I teach this subject. How do I use it in my class?</a><a href="#paper">Why paper and pencil?</a><a href="#quizzes">Why are there no quizzes?</a><a href="#ai">Does it use AI?</a><a href="#lms">Are there accounts, grades, or student tracking?</a><a href="#funding">How is the project organized and funded?</a><a href="#textbook">Why would I use this instead of a textbook?</a><a href="#homework">Why would I use this instead of an online homework system?</a><a href="#chatbot">Why would I use this instead of a chatbot?</a><a href="#videos">Why would I use this instead of videos?</a></nav>
-  <section class="panel answers"><h1>About the project</h1><h2 id="what">What is Canon Learning?</h2><p><b>A set of open courses, each complete enough to teach from.</b> A course has readings built around interactive visuals, a slide deck for each lesson, and practice problems with worked solutions.</p><p>The first course is Probability 1. It is being written now, and one lesson is published.</p><h2 id="free">Is it free? Is it open source?</h2><p><b>Yes to both.</b></p><ul><li>Course content (lessons, slides, problems, solutions) is CC BY 4.0: anyone can copy, change, and reuse it with credit, including commercially.</li><li>The engine that builds a course into a site is MIT, and so is the code inside a course.</li><li>Nothing is behind a login, and nothing open moves behind a paywall later.</li></ul><h2 id="students">Can I use a course on my own?</h2><p><b>Yes.</b> A course needs no account and no teacher. Read a lesson, work the problems on paper, then open the worked solutions.</p><h2 id="teach">I teach this subject. How do I use it in my class?</h2><p><b>Teach from it as it is, or fork it.</b> Each lesson page links to its slides and to the Markdown files behind the page and the slides.</p><ul><li>To use it unchanged, assign the reading and present the slides from the site.</li><li>To change it, fork the course on GitHub and edit the Markdown files. The fork builds a site of its own.</li></ul><h2 id="paper">Why paper and pencil?</h2><p><b>Because any take-home answer can now be produced by an LLM.</b> Homework here is ungraded practice done by hand. The grade comes from short paper quizzes in class, which a teacher writes.</p><h2 id="quizzes">Why are there no quizzes?</h2><p><b>Everything published is public, solutions included.</b> A published quiz would not measure anything, so a course publishes practice problems only. A teacher writes a graded quiz by changing those problems, and keeps it private.</p><h2 id="ai">Does it use AI?</h2><p><b>Not when a student uses it.</b> A course is a static site with no chatbot and no model behind it. An LLM helps the author draft visuals and problems, and a person checks each one before it is published.</p><h2 id="lms">Are there accounts, grades, or student tracking?</h2><p><b>No.</b> A course stores no student data. Grades and rosters belong to a school, so they are planned as a separate, open, self-hosted piece of software. It is not built, and it waits until people are using the courses.</p><h2 id="funding">How is the project organized and funded?</h2><p><b>It is a side project with one author, Ethan Boos.</b> There is no company selling access to it. Possible income is grants, commissioned courses, and paid help for schools, never access to a course.</p><h1>Comparisons</h1><h2 id="textbook">Why would I use this instead of a textbook?</h2><p>A course is interactive and free to read, and it comes with the slides and the problems a teacher needs to run a class.</p><h2 id="homework">Why would I use this instead of an online homework system?</h2><p>Those systems grade take-home answers, which an LLM can now produce. Here homework is practice and the grade is on paper.</p><h2 id="chatbot">Why would I use this instead of a chatbot?</h2><p>The explanations and worked solutions are written and checked by a person, in one order, with one notation. A chatbot can still help a student who is stuck.</p><h2 id="videos">Why would I use this instead of videos?</h2><p>A video gives intuition for one idea. This is a full course a teacher can run, with practice for every lesson.</p></section>
+  <nav class="contents"><b>On this page</b><a href="#about">About the Project</a><a class="question" href="#what">What is Canon Learning?</a><a class="question" href="#openstax">What’s the difference between Canon Learning and OpenStax?</a><a class="question" href="#why">Why does STEM education need this?</a><a class="question" href="#incentive">What is the long-term goal?</a><a class="question" href="#visuals">Why minimal text and maximum visuals?</a><a class="question" href="#open-source">Is Canon Learning open source?</a><a class="question" href="#hosted">Is there a hosted version?</a><a class="question" href="#part">Do I have to adopt the whole course?</a><a class="question" href="#other-services">Does it work with an LMS?</a><a href="#model">The Model</a><a class="question" href="#money">How is this project organized and funded?</a><a class="question" href="#no-plans">Why isn’t there an instructor edition or a paid plan?</a></nav>
+  <section class="answers">
+<h1 id="about">About the Project</h1><h2 id="what">What is Canon Learning?</h2>
+<p>A <b>course kit in a box</b> for teaching STEM.</p>
+<p>A kit is everything a teacher needs to run a course: a short reading for each lesson, built around <b>interactive visuals and animations</b>; a <b>slide deck</b> for each class; and <b>practice problems</b> with worked solutions.</p>
+<p>The reading has as little text as it can and as many visuals as it needs. All of it is free and open, and a teacher can change any part of it. The first kit is <a href="../probability-1/">Probability 1</a>.</p>
+<h2 id="openstax">What’s the difference between Canon Learning and OpenStax?</h2>
+<p>OpenStax publishes <b>textbooks.</b> Canon Learning publishes <b>courses.</b></p>
+<p><a href="https://openstax.org">OpenStax</a> books are free, peer reviewed, and openly licensed, and they cover far more subjects than this project does. A book is long-form text with static figures. The slides and answer guides that come with it sit behind a verified instructor account, and graded homework runs on partner platforms, many of them paid.</p>
+<p>A Canon kit starts from the other end. The lesson is <b>built around visuals a student can run and change,</b> with a few paragraphs between them. The slides use different examples from the reading, so class is not the book read aloud. Every solution is public, because the grade is meant to come from paper quizzes in class and not from homework.</p>
+<h2 id="why">Why does STEM education need this?</h2>
+<p>Because <b>AI is breaking the classroom.</b></p>
+<p>LLMs have made explanations free and homework answers free. A student can now hand in a correct problem set without understanding a line of it, so homework has stopped measuring anything, and a grade built on it means little.</p>
+<p>More explanation is not the fix, because explanation is the part that became free. The fix is <b>a course worth showing up for,</b> where the ideas can be seen and changed, and <b>proof of learning on paper,</b> where a model cannot do the work for the student.</p>
+<h2 id="incentive">What is the long-term goal?</h2>
+<p><b>High quality course materials that are easy to edit,</b> and that a student or a teacher can make their own.</p>
+<p>Everything here is Markdown, a plain text file. It opens in any editor, and it is not locked into a web platform, or into Microsoft or Google. Anyone can copy a course, change it, and keep it.</p>
+<p>The opinionated stance of this project is that learning needs to be <b>less online and more on paper.</b> A subject is best learned by writing out practice problems by hand, and most of what is sold to classrooms is moving the other way. The hope is that with a full, high quality course here for free, fewer people will reach for the online platforms, and more of the work will go back to paper.</p>
+<h2 id="visuals">Why minimal text and maximum visuals?</h2>
+<p>Because text is <b>the part every student already has.</b></p>
+<p>Assume every student is using an LLM. It will explain any idea in as many words as they want, with a rough picture at best. This site is complementary to that: it is where the <b>polished, interactive visuals</b> are, the ones that hammer home an idea better than a page of text can.</p>
+<p>A paragraph can say that a test result changes a probability. A visual sorts 1000 people one by one and lets the student change how common the condition is and watch the answer move. Building one takes days, and a teacher preparing three classes a week does not have that time. They are built once here, checked, and given to every teacher.</p>
+<p>The slides get the same treatment. A deck has its own drawings and its own examples, made to be read from the back of a room and stepped through while the teacher talks, so the reading and the class <b>complement each other</b> and do not repeat each other.</p>
+<h2 id="open-source">Is Canon Learning open source?</h2>
+<p>Yes, <b>all of it,</b> with no open core. This includes:</p>
+<ul>
+<li>The lessons, slide decks, problems, and worked solutions of each course, such as <a href="https://github.com/canonlearning/probability-1">Probability 1</a> (CC BY 4.0)</li>
+<li>The interactive visuals and slide drawings inside a course (MIT)</li>
+<li>The <a href="https://github.com/canonlearning/canon">engine</a> that builds a folder of Markdown into a course site and its decks (MIT)</li>
+<li><a href="https://github.com/canonlearning/canonlearning.github.io">This site</a>, what you’re reading now</li>
+</ul>
+<p>CC BY allows commercial reuse with credit. There are no exceptions: no instructor edition, no private answer key, and no closed service behind the site.</p>
+<h2 id="hosted">Is there a hosted version?</h2>
+<p>Yes. <b>This site is the hosted version,</b> and it needs no account. Read a lesson, present a deck, or print either one.</p>
+<p>There is no login because a course does not need to know who is reading it. If you want a copy you control, fork the course on GitHub and it publishes itself with GitHub Pages at no cost. A course is a folder of static files, so it also runs from a school web server or a USB drive.</p>
+<h2 id="part">Do I have to adopt the whole course?</h2>
+<p>No. A kit is designed to be used <b>in pieces or whole.</b></p>
+<p>The smallest use is one visual. Open a lesson, put the visual on the projector, and use it in a class that otherwise follows your own notes and textbook. The next step up is assigning one lesson as the reading for a week, or teaching one class from its deck.</p>
+<p>The largest use is running the course from the kit: the readings in order, a deck for each class, the problems as practice, and your own paper quizzes for the grade. Teachers who go that far should fork the course, so the order, notation, and examples can be changed to fit the syllabus.</p>
+<h2 id="other-services">Does it work with an LMS?</h2>
+<p>Canon Learning does not currently support LMS integration, and it is not a platform. It records nothing about a student.</p>
+<p>If enough demand arises, a natural extension is an <b>open source, self-hostable system</b> that lets a school keep its student data on its own servers.</p>
+<h1 id="model">The Model</h1><h2 id="money">How is this project organized and funded?</h2>
+<p>Canon Learning was started by an individual, <a href="https://ethanboos.com">Ethan Boos</a>, who writes the courses and maintains the engine. It is a side project, with no investors expecting a return.</p>
+<p>Plainly, it does <b>not make money by selling the course.</b> Income pays for the author’s time, never for access. In rough order of expected size:</p>
+<ul>
+<li><b>Grants</b> for open educational resources, from federal programs, foundations, and state programs that pay faculty to replace paid textbooks</li>
+<li><b>Commissioned courses:</b> a department, company, or foundation pays for the next course, and it ships open</li>
+<li><b>Help for schools:</b> adapting a course to a syllabus or exam format, and training teachers to run a paper-first class</li>
+<li><b>Sponsorship and print:</b> sponsors cover running costs, and printed workbooks sell at a margin while the PDFs stay free</li>
+</ul>
+<p>Teachers have no budget, so the money comes from departments, schools, and funders. This is not a good way to get rich. It is a way to keep a course open and maintained.</p>
+<h2 id="no-plans">Why isn’t there an instructor edition or a paid plan?</h2>
+<p>Selling access would create a <b>conflict of interest</b> between the course and the business.</p>
+<p>Publishers earn from an access code bought by each student, each term. That only works if the material is gated and the class cannot easily leave, so the answers go behind an instructor login and the homework goes on a platform the school does not control.</p>
+<p>The goal here is the opposite: a kit that is <b>as easy as possible to take and leave.</b> A fork is a complete copy, and it keeps working if this site disappears.</p>
+  </section>
 </main>
 <footer class="foot"><div class="wrap">
   <div><a class="brand" href="../">Canon Learning</a><small>Open courses with interactive visuals, taught in class and practiced on paper. Content is CC BY 4.0 and code is MIT.</small></div>
