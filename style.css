@@ -30,6 +30,19 @@ a { color: var(--blue); }
 .top nav a { margin-left: 28px; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px; }
 .top nav a:hover, .top nav a.here { color: var(--blue); }
 
+/* On a narrow screen the links are behind a menu button, and open as a
+   list under the bar. */
+.menu { display: none; padding: 8px; margin-right: -8px; border: 0; background: none; cursor: pointer; }
+.menu svg { display: block; width: 26px; height: 26px; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+@media (max-width: 700px) {
+  .top { position: relative; }
+  .wrap { padding: 0 20px; }
+  .menu { display: block; }
+  .top nav { display: none; position: absolute; z-index: 5; left: 0; right: 0; top: 64px; padding: 8px 20px 16px; background: var(--page); border-bottom: 1px solid var(--line); }
+  .top.open nav { display: block; }
+  .top nav a { display: block; margin: 0; padding: 12px 0; }
+}
+
 /* Hero, with small drawings set at angles around the words */
 .hero { position: relative; overflow: hidden; padding: 110px 24px 130px; text-align: center; }
 .hero h1 { position: relative; margin: 0 auto; max-width: 15em; text-wrap: balance; font-size: 46px; line-height: 1.1; letter-spacing: -.01em; }
@@ -123,3 +136,19 @@ a { color: var(--blue); }
 .contents a:hover { text-decoration: underline; }
 @media (max-width: 768px) { .about { flex-direction: column; margin-top: 60px; } .contents { width: auto; } }
 
+/* A narrow screen: less space between sections, and a footer whose two
+   lists sit side by side under its first block. */
+@media (max-width: 700px) {
+  .hero { padding: 48px 20px; }
+  .panel, .grid2 { padding: 40px 0; }
+  .example { padding: 0 0 24px; }
+  .quote { padding: 40px 0; }
+  .quote p { font-size: 24px; }
+  .panel:last-child { padding-bottom: 64px; }
+  .claim h2 { font-size: 26px; }
+  .claim pre { padding: 16px; font-size: 12px; }
+  .foot { padding: 44px 0 48px; }
+  .foot .wrap { grid-template-columns: 1fr 1fr; }
+  .foot .wrap > :first-child { grid-column: 1 / -1; }
+  .about { margin-bottom: 80px; }
+}
